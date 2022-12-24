@@ -78,10 +78,11 @@ public class MyArrayList<E> implements List<E>, RandomAccess, Cloneable {
      * Copies all elements from passed collection into array
      * @param c Collection
      */
+    //TODO: swap with arraycopy
     public MyArrayList(Collection<? extends E> c){
         size = c.size();
         capacity = Math.max(c.size(), DEFAULT_CAPACITY);
-        addAll(c);
+        this.addAll(c);
     }
     /**
      * <p>Method to return amount of elements in the array</p>
@@ -129,9 +130,10 @@ public class MyArrayList<E> implements List<E>, RandomAccess, Cloneable {
              * Checks if there is a next element that is not null
              * @return true if there is element, false otherwise
              */
+            //TODO
             @Override
             public boolean hasNext() {
-                return currentIndex < size && array[currentIndex]!=null;
+                return currentIndex < size;
             }
 
             /**
@@ -140,7 +142,7 @@ public class MyArrayList<E> implements List<E>, RandomAccess, Cloneable {
              */
             @Override
             public E next() {
-                return array[currentIndex + 1];
+                return array[currentIndex++];
             }
         };
     }
@@ -393,22 +395,22 @@ public class MyArrayList<E> implements List<E>, RandomAccess, Cloneable {
             private int currentIndex = index;
             @Override
             public boolean hasNext() {
-                return currentIndex < size && array[currentIndex]!=null;
+                return currentIndex < size;
             }
 
             @Override
             public E next() {
-                return hasNext() ? array[++currentIndex] : null;
+                return hasNext() ? array[currentIndex++] : null;
             }
 
             @Override
             public boolean hasPrevious() {
-                return currentIndex > 0 && array[currentIndex]!=null;
+                return currentIndex > 0;
             }
 
             @Override
             public E previous() {
-                return hasPrevious() ? array[--currentIndex] : null;
+                return hasPrevious() ? array[currentIndex--] : null;
             }
 
             @Override
