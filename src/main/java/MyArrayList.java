@@ -520,7 +520,7 @@ public class MyArrayList<E> implements List<E>, RandomAccess, Cloneable {
      * If this happens repeatedly in every partition, then each recursive call processes a list of size one less than the previous list.
      * Consequently, we can make n − 1 nested calls before we reach a list of size 1.
      * This means that the call tree is a linear chain of n − 1 nested calls.
-     * The ith call does O(n − i) work to do the partition, and {\displaystyle \textstyle \sum _{i=0}^{n}(n-i)=O(n^{2})}\textstyle \sum _{i=0}^{n}(n-i)=O(n^{2}),
+     * The ith call does O(n − i) work to do the partition, and sum {i=0}^{n}(n-i)=O(n^{2})} sum {i=0}^{n}(n-i)=O(n^{2}),
      * so in that case quicksort takes O(n2) time.
      *
      * Best-case analysis
