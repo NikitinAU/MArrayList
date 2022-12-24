@@ -505,7 +505,7 @@ public class MyArrayList<E> implements List<E>, RandomAccess, Cloneable {
      * {@linkplain Comparable natural ordering} should be used.
      *
      * This implementation uses Single Pivot Quicksort and has the best case runtime of O(nlog(n)),
-     * average runtime is also O(nlog(n)), and the worst case runtime of O(n<sup>2</sup>)
+     * average runtime is also O(nlog(n)), and the worst case runtime of O(n^2)
      *
      * This implementation uses single pivot quicksort with pivot in the middle of array
      * The array is divided into 2 parts by this pivot: left and right
